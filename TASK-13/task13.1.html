@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TechFest 2025</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-image: url('https://i.imgur.com/U3vTGjX.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+    }
+
+    header h1 {
+      color: #ffeb3b;
+    }
+
+    .details {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 5px solid #00e5ff;
+    }
+
+    table {
+      width: 100%;
+      margin: 20px 0;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+      color: #fff;
+    }
+
+    .gallery img {
+      float: left;
+      width: 30%;
+      margin: 1.66%;
+      border: 3px solid #fff;
+      border-radius: 10px;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    #rsvp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff4081;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    #popup {
+      display: none;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      background-color: #ffffff;
+      color: #000;
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 10;
+      width: 300px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
+    }
+
+    #popup input, #popup textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+    }
+
+    #popup button {
+      padding: 8px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #close-btn {
+      float: right;
+      color: red;
+      cursor: pointer;
+    }
+
+    a:hover {
+      color: #ffeb3b;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to TechFest 2025 🎉</h1>
+    <p>Join us for a day full of innovation, fun, and technology!</p>
+  </header>
+
+  <section class="details">
+    <h2>Event Details</h2>
+    <p><strong>Date:</strong> August 10, 2025</p>
+    <p><strong>Venue:</strong> Innovation Hall, City Convention Center</p>
+  </section>
+
+  <section>
+    <h2>Event Schedule</h2>
+    <table>
+      <tr><th>Time</th><th>Activity</th></tr>
+      <tr><td>10:00 AM</td><td>Opening Ceremony</td></tr>
+      <tr><td>11:00 AM</td><td>Tech Talk: Future of AI</td></tr>
+      <tr><td>01:00 PM</td><td>Workshops & Demos</td></tr>
+      <tr><td>04:00 PM</td><td>Startup Pitching</td></tr>
+      <tr><td>06:00 PM</td><td>Closing & Snacks</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://i.imgur.com/jU0Z5Fh.jpg" alt="Tech">
+      <img src="https://i.imgur.com/1iG4qjF.jpg" alt="Talk">
+      <img src="https://i.imgur.com/bYr3Wzy.jpg" alt="Crowd">
+    </div>
+    <div class="clear"></div>
+  </section>
+
+  <button id="rsvp-btn" onclick="document.getElementById('popup').style.display='block'">RSVP Now</button>
+
+  <div id="popup">
+    <span id="close-btn" onclick="document.getElementById('popup').style.display='none'">✖</span>
+    <h3>RSVP Form</h3>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Any Comments?"></textarea>
+    <button type="submit">Submit</button>
+  </div>
+
+</body>
+</html>
+
+
