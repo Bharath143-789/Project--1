@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Summit</title>
+  <style>
+    :root {
+      --bg: #fff; --text: #111; --accent: #0077cc;
+      --card: #f2f2f2; --btn-text: #fff;
+    }
+    [data-theme="dark"] {
+      --bg: #121212; --text: #eee; --accent: #5599ff;
+      --card: #1e1e1e;
+    }
+    body {
+      margin: 0; font-family: sans-serif;
+      background: var(--bg); color: var(--text);
+      transition: all 0.3s ease;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 999;
+      background: var(--bg); padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex; justify-content: space-between;
+    }
+    nav a {
+      text-decoration: none; margin: 0 1rem;
+      color: var(--text);
+    }
+    .hero {
+      background: url('https://picsum.photos/id/1015/1200/600') no-repeat center/cover;
+      height: 70vh; display: flex; align-items: center;
+      justify-content: center; text-align: center;
+      color: white;
+    }
+    .hero h1 {
+      background: rgba(0, 0, 0, 0.6); padding: 1rem; border-radius: 10px;
+    }
+    .cta {
+      margin-top: 1rem; padding: 0.8rem 1.5rem;
+      background: var(--accent); color: var(--btn-text);
+      border: none; border-radius: 6px;
+      cursor: pointer; font-size: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .cta:hover {
+      transform: scale(1.1);
+    }
+
+    section { padding: 2rem 1rem; max-width: 900px; margin: auto; }
+
+    table {
+      width: 100%; border-collapse: collapse;
+    }
+    th, td {
+      padding: 0.75rem; border: 1px solid #ccc;
+      text-align: center;
+    }
+    .speakers {
+      display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+    }
+    .speaker {
+      flex: 1 1 200px; background: var(--card);
+      padding: 1rem; border-radius: 8px; text-align: center;
+    }
+    .register input, .register select {
+      width: 100%; padding: 0.6rem;
+      margin-bottom: 1rem; border-radius: 5px;
+      border: 1px solid #aaa;
+    }
+    .register input:focus, .register select:focus {
+      border-color: var(--accent); outline: none;
+    }
+
+    .theme-btn {
+      background: var(--accent); color: white;
+      border: none; padding: 0.4rem 0.8rem;
+      border-radius: 5px; cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      .hero { height: 50vh; }
+      nav { flex-direction: column; align-items: center; }
+      .speakers { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div><strong>Tech Summit</strong></div>
+    <div>
+      <a href="#schedule">Schedule</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#register">Register</a>
+      <button class="theme-btn" onclick="toggleTheme()">Theme</button>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <h1>Welcome to Tech Summit 2025</h1>
+      <button class="cta">Join Now</button>
+    </div>
+  </div>
+
+  <section id="schedule">
+    <h2>Schedule</h2>
+    <table>
+      <tr><th>Time</th><th>Session</th><th>Speaker</th></tr>
+      <tr><td>09:00</td><td>Opening Keynote</td><td>Alice</td></tr>
+      <tr><td>10:00</td><td>AI in 2025</td><td>Bob</td></tr>
+      <tr><td>11:00</td><td>Break</td><td>-</td></tr>
+    </table>
+  </section>
+
+  <section id="speakers">
+    <h2>Speakers</h2>
+    <div class="speakers">
+      <div class="speaker">
+        <h3>Alice</h3>
+        <p>CEO, FutureTech</p>
+      </div>
+      <div class="speaker">
+        <h3>Bob</h3>
+        <p>AI Expert</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="register">
+    <h2>Register</h2>
+    <form class="register">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email" required />
+      <select required>
+        <option value="">Select Ticket</option>
+        <option>Standard</option>
+        <option>VIP</option>
+      </select>
+      <button class="cta" type="submit">Submit</button>
+    </form>
+  </section>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === "dark" ? "light" : "dark";
+    }
+  </script>
+</body>
+</html>
